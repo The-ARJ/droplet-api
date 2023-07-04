@@ -17,6 +17,22 @@
   },
   "homepage": "https://github.com/The-ARJ/cardova-api#readme",
   "dependencies": {
-    "express": "^4.18.2"
+    "@sendgrid/mail": "^7.7.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "date-fns": "^2.30.0",
+    "dotenv": "^16.3.1",
+    "env": "^0.0.2",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "later": "^1.2.0",
+    "mailgun-js": "^0.22.0",
+    "moment": "^2.29.4",
+    "mongoose": "^7.3.1",
+    "multer": "^1.4.5-lts.1",
+    "node-cron": "^3.0.2",
+    "node-schedule": "^2.1.1",
+    "uuid": "^9.0.0"
   }
 }
