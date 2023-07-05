@@ -6,9 +6,11 @@ const storage = multer.diskStorage({
     try {
       let uploadPath;
       if (file.fieldname === 'userImage') {
-        uploadPath = './uploads/user-image';
+        uploadPath = './uploads/user_images';
       } else if (file.fieldname === 'cardImage') {
         uploadPath = './uploads/card-images';
+      } else if (file.fieldname === 'contactImage') {
+        uploadPath = './uploads/contact-images';
       } else {
         throw new Error('Invalid fieldname');
       }

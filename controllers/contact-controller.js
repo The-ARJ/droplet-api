@@ -18,14 +18,16 @@ const createContact = (req, res, next) => {
     let contact = {
         ...req.body,
     };
+    console.log("req.body:", req.body);
     Contact.create(contact)
-        .then((contact) => {
+        .then((createdContact) => {
             res.status(201).json({
                 message: "Contact created successfully",
-                contact,
+                contact: createdContact,
             });
         })
         .catch((error) => {
+            console.log(error);
             res.status(500).json({
                 message: "Error creating contact",
                 error: error.message,

@@ -2,13 +2,13 @@ const mongoose = require('mongoose')
 
 const contactchema = mongoose.Schema({
 
-    fullName: {
+    firstName: {
         type: String,
-        required: true
+        required: [true, 'First Name is required'],
     },
-    phoneNumber: {
+    lastName: {
         type: String,
-        required: [true, 'Phone Number is required'],
+        required: [true, 'Last Name is required'],
     },
     email: {
         type: String,

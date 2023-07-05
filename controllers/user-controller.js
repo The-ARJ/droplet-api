@@ -95,8 +95,7 @@ function updateUser(user, req, res) {
   user.email = req.body.email || user.email;
   user.firstName = req.body.firstName || user.firstName;
   user.lastName = req.body.lastName || user.lastName;
-  user.phoneNumber = req.body.phoneNumber || user.phoneNumber;
-  user.profession = req.body.profession || user.profession;
+  // user.phoneNumber = req.body.phoneNumber || user.phoneNumber;
   user.role = req.body.role || user.role;
   if (req.file) {
     user.image = "/user_images/" + req.file.filename;

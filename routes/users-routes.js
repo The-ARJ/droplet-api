@@ -40,7 +40,7 @@ router.post("/", upload.single("userImage"), (req, res, next) => {
 
         const newUser = new User({
           email: req.body.email,
-          phoneNumber: req.body.phoneNumber,
+          // phoneNumber: req.body.phoneNumber,
           firstName: req.body.firstName,
           lastName: req.body.lastName,
           // image: "/user_images/" + req.file.filename,
@@ -54,7 +54,7 @@ router.post("/", upload.single("userImage"), (req, res, next) => {
             const data = {
               id: user._id,
               email: user.email,
-              phoneNumber: user.phoneNumber,
+              // phoneNumber: user.phoneNumber,
               firstName: user.firstName,
               lastName: user.lastName,
               role: user.role,

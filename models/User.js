@@ -3,8 +3,6 @@ const mongoose = require('mongoose')
 const userSchema = mongoose.Schema({
     phoneNumber: {
         type: String,
-        required: [true, 'Phone Number is required'],
-        unique: [true, 'Phone number already exists'],
     },
     profession: {
         type: String,
@@ -34,10 +32,6 @@ const userSchema = mongoose.Schema({
     image: {
         type: String
     },
-    // profile: {
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     ref: 'Profile'
-    // }
 }, { timestamps: true })
 
 module.exports = mongoose.model('User', userSchema)
