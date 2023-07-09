@@ -10,10 +10,11 @@ const verifyUser = (req, res, next) => {
     jwt.verify(token, process.env.SECRET, (err, decoded) => {
         if (err) return next(err)
         req.user = decoded
-        console.log(req.user) // Log the req.user object
+        console.log(req.user)
         next()
     })
 }
+
 
 const verifyAdmin = (req, res, next) => {
     if (req.user && req.user.role === 'admin') {

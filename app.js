@@ -5,6 +5,8 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const userRouter = require("./routes/users-routes");
 const contactRouter = require("./routes/contact-routes");
+const cardRouter = require("./routes/card-routes");
+const templateRouter = require("./routes/template-route");
 const bodyParser = require("body-parser");
 
 
@@ -44,6 +46,8 @@ app.use(cors());
 app.use("/users", userRouter);
 app.use("/contacts", contactRouter);
 app.use(auth.verifyUser);
+app.use("/cards", cardRouter);
+app.use("/templates", templateRouter);
 app.use("/uploads", express.static(path.join(__dirname, "/uploads")));
 
 app.use((err, req, res, next) => {

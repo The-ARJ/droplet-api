@@ -76,22 +76,26 @@ router.post("/", upload.single("userImage"), (req, res, next) => {
       return res.status(500).json({ error: "Server Error" });
     });
 });
-
 router.post("/login/user", (req, res, next) => {
-  const { email, phoneNumber, password } = req.body;
+  const { email, password } = req.body;
 
-  // Find user by email or phone number
-  User.findOne({
-    $or: [{ email: email }, { phoneNumber: phoneNumber }]
-  })
+  console.log("Login request received for email:", email);
+
+  // Find user by email
+  User.findOne({ email })
     .then((user) => {
       if (!user) {
+        console.log("User not found for email:", email);
         return res.status(401).json({ error: "Invalid credentials" });
       }
 
       bcrypt.compare(password, user.password, (err, isMatch) => {
-        if (err) return next(err);
+        if (err) {
+          console.log("Error comparing passwords:", err);
+          return next(err);
+        }
         if (!isMatch) {
+          console.log("Invalid password for email:", email);
           return res.status(401).json({ error: "Invalid credentials" });
         }
 
@@ -101,13 +105,16 @@ router.post("/login/user", (req, res, next) => {
           role: user.role,
         };
         const token = jwt.sign(data, process.env.SECRET, { expiresIn: "1y" });
+        console.log("Login successful for email:", email);
         return res.json({ status: "Login Success", token });
       });
     })
     .catch((err) => {
+      console.log("Error during login:", err);
       return res.status(500).json({ error: "Server Error" });
     });
 });
+
 
 
 module.exports = router;

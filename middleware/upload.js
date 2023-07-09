@@ -8,7 +8,9 @@ const storage = multer.diskStorage({
       if (file.fieldname === 'userImage') {
         uploadPath = './uploads/user_images';
       } else if (file.fieldname === 'cardImage') {
-        uploadPath = './uploads/card-images';
+        uploadPath = './uploads/card_images';
+      } else if (file.fieldname === 'templateImage') {
+        uploadPath = './uploads/template_images';
       } else if (file.fieldname === 'contactImage') {
         uploadPath = './uploads/contact-images';
       } else {
