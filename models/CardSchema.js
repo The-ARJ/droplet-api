@@ -11,15 +11,15 @@ const CardSchema = mongoose.Schema({
     },
     jobTitle: {
         type: String,
-        // required: [true, 'Job Title is required'],
+        required: [true, 'Job Title is required'],
     },
     company: {
         type: String,
-        // required: [true, 'Company is required'],
+        required: [true, 'Company is required'],
     },
     email: {
         type: String,
-        // required: [true, 'Email is required'],
+        required: [true, 'Email is required'],
     },
     phone: {
         type: String,
@@ -29,21 +29,7 @@ const CardSchema = mongoose.Schema({
         type: String,
     },
     address: {
-        street: {
-            type: String,
-        },
-        city: {
-            type: String,
-        },
-        state: {
-            type: String,
-        },
-        zip: {
-            type: String,
-        },
-        country: {
-            type: String,
-        },
+        type: String,
     },
     socialMedia: {
         linkedIn: {

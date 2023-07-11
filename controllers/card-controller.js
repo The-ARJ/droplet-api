@@ -105,8 +105,8 @@ const getCardById = (req, res, next) => {
 
 
 const deleteCardById = (req, res, next) => {
-  const cardId = req.params.cardid;
-
+  const cardId = req.params.card_id;
+  console.log("delete", cardId)
   Card.findByIdAndDelete(cardId)
     .then((card) => {
       if (card) {

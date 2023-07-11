@@ -4,15 +4,24 @@ const templateSchema = new mongoose.Schema(
     {
         name: {
             type: String,
-            // required: true,
         },
-        border: {
+        borderRadius: {
             type: String,
-            required: true,
+        },
+        width: {
+            type: String,
+        },
+        height: {
+            type: String,
         },
         color: {
             type: String,
-            required: true,
+        },
+        textcolor: {
+            type: String,
+        },
+        textalignment: {
+            type: String,
         },
         owner: {
             type: mongoose.Schema.Types.ObjectId,
@@ -20,6 +29,8 @@ const templateSchema = new mongoose.Schema(
         },
         image: {
             type: String,
+            required: true,
+
         },
     },
     { timestamps: true }

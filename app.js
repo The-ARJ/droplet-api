@@ -45,9 +45,9 @@ app.use(cors());
 
 app.use("/users", userRouter);
 app.use("/contacts", contactRouter);
-app.use(auth.verifyUser);
 app.use("/cards", cardRouter);
 app.use("/templates", templateRouter);
+app.use(auth.verifyUser);
 app.use("/uploads", express.static(path.join(__dirname, "/uploads")));
 
 app.use((err, req, res, next) => {
